@@ -1,0 +1,36 @@
+
+
+1 android\gradle\wrapper\gradle-wrapper.properties
+#distributionBase=GRADLE_USER_HOME
+#distributionPath=wrapper/dists
+#zipStoreBase=GRADLE_USER_HOME
+#zipStorePath=wrapper/dists
+#distributionUrl=https\://services.gradle.org/distributions/gradle-6.0.1-all.zip
+
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-all.zip
+
+2 react-native run-android
+
+
+注意：
+1 adb
+
+adb如何连接mumu模拟器
+adb connect 127.0.0.1:7555
+adb kill-server && adb server && adb shell
+
+adb devices
+
+2 环境变量
+ANDROID_HOME：
+C:\Users\Administrator\AppData\Local\Android\Sdk
+
+Path：
+%ANDROID_HOME%\tools
+%ANDROID_HOME%\platform-tools
+%JAVA_HOME%\bin
+%JAVA_HOME%\jre\bin
