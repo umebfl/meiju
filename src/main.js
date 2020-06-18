@@ -11,10 +11,11 @@ import Home from './home/home'
 import Store from './store/store'
 import Mine from './mine/mine'
 
-import Theme from '../theme'
+import Theme from './theme'
 
 
 const Tab = createMaterialBottomTabNavigator()
+const Stack = createStackNavigator()
 
 class TabNavigator extends Component {
     render() {
@@ -28,23 +29,23 @@ class TabNavigator extends Component {
             >
                 <Tab.Screen name="首页" component={Home} options={{
                     tabBarIcon: ({ focused, tintColor }) => (<Image
-                        source={require('../asset/home.png')}
+                        source={require('../asset/tab/home.png')}
                         style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
                 }}/>
                 <Tab.Screen name="发现" component={Discover} options={{
                     tabBarIcon: ({ focused, tintColor }) => (<Image
-                        source={require('../asset/discover.png')}
+                        source={require('../asset/tab/discover.png')}
                         style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
                 }}/>
                 <Tab.Screen name="商城" component={Store} options={{
                     tabBarIcon: ({ focused, tintColor }) => (
                                 <Image
-                                source={require('../asset/store.png')}
+                                source={require('../asset/tab/store.png')}
                                 style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
                 }}/>
                 <Tab.Screen name="我的" component={Mine} options={{
                     tabBarIcon: ({ focused, tintColor }) => (<Image
-                        source={require('../asset/mine.png')}
+                        source={require('../asset/tab/mine.png')}
                         style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
                 }}/>
             </Tab.Navigator>
@@ -59,7 +60,7 @@ export default class Main extends Component {
         return (
             <Provider>
                 <NavigationContainer>
-                    <TabNavigator/>
+                        <TabNavigator/>
                 </NavigationContainer>
             </Provider>
         )
