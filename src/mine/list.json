@@ -1,0 +1,73 @@
+{
+    mineList: [
+        {
+            title: "",
+            data:
+            [
+                {
+                    title: '我的商城',
+                    subtitel: '',
+                    icon: 'mystore',
+                    push: '/mine/myStore',
+                },
+                {
+                    title: '家电定制',
+                    subtitel: '',
+                    icon: 'customization',
+                }
+            ]
+        },
+        {
+            title: "",
+            data:
+            [
+                {
+                    title: '服务中心',
+                    subtitel: '',
+                    icon: 'servicecenter',
+                },
+                {
+                    title: '社区中心', subtitel: '',
+                    icon: 'community',
+                },
+                {
+                    title: '帮助中心',
+                    subtitel: '帮助中心',
+                    icon: 'helpcenter',
+                }
+            ]
+        },
+        {
+            title: "",
+            data:
+            [
+                {
+                    title: '家庭安全防卫',
+                    subtitel: '',
+                    icon:'familySafety',
+                },
+                {
+                    title: '去评分',
+                    subtitel: '',
+                    icon: 'grade',
+                }
+            ]
+         },
+        {
+            title: "",
+            data:
+            [
+                {
+                    title: '第三方平台设备',
+                    subtitel: '',
+                    icon: 'otherdevice',
+                },
+                {
+                    title: '设置',
+                    subtitel: '',
+                    icon: 'setting',
+                }
+            ]
+        },
+    ]
+}
