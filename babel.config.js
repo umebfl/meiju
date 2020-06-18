@@ -1,5 +1,6 @@
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
+<<<<<<< HEAD
   plugins: ['babel-plugin-root-import'],
   plugins: [
    [
@@ -11,4 +12,15 @@ module.exports = {
     },
    ]
  ]
+=======
+  "plugins": [
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathPrefix": "#/",
+        "rootPathSuffix": "./",
+      },
+    ],
+  ],
+>>>>>>> 1a870a224b8d6cf015ee3c881612a856731ca9e1
 };
