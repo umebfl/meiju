@@ -86,7 +86,7 @@ function HomeScreen ({ navigation }) {
                         <View style={styles.header}></View>
                     )}
                     ItemSeparatorComponent={() => (
-                        <View style={{height: 0.5, backgroundColor: 'grey'}}/>
+                        <View style={{height: 0.5, backgroundColor: '#EEE'}}/>
                     )}
                     sections={ConstantData.mineList}
                     keyExtractor={(item, index) => item + index}
@@ -111,13 +111,14 @@ export default class Connect extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex:1,
+        backgroundColor: 'white',
     },
     view: {
         flex:1,
     },
     header: {
         flex: 1,
-        backgroundColor: 'grey',
+        backgroundColor: '#F8F8F8',
         height: 5,
     },
     item: {

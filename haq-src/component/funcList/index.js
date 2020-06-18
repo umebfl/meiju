@@ -55,7 +55,7 @@ export const FuncItem = payload => (
                     borderBottomColor: Theme['border-color']}}>
 
                     <View>
-                        <Text style={{fontSize: 16, color: Theme['text-active'],}}>{payload.title}</Text>
+                        <Text style={{fontSize: 18, color: Theme['text-active'],}}>{payload.title}</Text>
                     </View>
 
                     <WingBlank>

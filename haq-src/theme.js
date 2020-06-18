@@ -8,9 +8,9 @@ export default {
     'text-color': '#3A3C6F',
 
     // 底线颜色
-    'border-color': '#CCC',
+    'border-color': '#EEE',
     // 底线宽度
-    'border-width': 0.2,
+    'border-width': 0.25,
 
     // 激活的的文本颜色
     'text-active': '#000000',

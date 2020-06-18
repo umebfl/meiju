@@ -21,8 +21,6 @@ export default class Index extends Component {
     render() {
         return (
             <NavigationContainer>
-                <StatusBar barStyle={'light-content'} />
-
                 <Stack.Navigator>
                     <Stack.Screen name='/main' options={{title: null, headerStyle: {height: 0}}} component={Main}/>
                     <Stack.Screen name='/mine/setting' options={{title: '设置', headerTitleStyle: {fontSize: 16, justifyContent: 'center'}}} component={Mine_setting}/>
