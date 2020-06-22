@@ -11,6 +11,8 @@ import Home from './home/home'
 import Store from './store/store'
 import Mine from './mine/mine'
 
+import MyStore from '#/src/mine/myStore'
+
 import Theme from './theme'
 
 
@@ -22,7 +24,7 @@ class TabNavigator extends Component {
         return (
             <Tab.Navigator
                 initialRouteName='Discover'
-                activeColor= {Theme['icon-color-basic']}
+                activeColor= {Theme['icon-color-theme']}
                 barStyle={{ backgroundColor: '#FFF' }}
                 labeled={true}
                 shifting={false}
@@ -30,23 +32,23 @@ class TabNavigator extends Component {
                 <Tab.Screen name="首页" component={Home} options={{
                     tabBarIcon: ({ focused, tintColor }) => (<Image
                         source={require('../asset/tab/home.png')}
-                        style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
+                        style={[styles.icon, {tintColor: focused ? Theme['icon-color-theme'] : tintColor}]}/>),
                 }}/>
                 <Tab.Screen name="发现" component={Discover} options={{
                     tabBarIcon: ({ focused, tintColor }) => (<Image
                         source={require('../asset/tab/discover.png')}
-                        style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
+                        style={[styles.icon, {tintColor: focused ? Theme['icon-color-theme'] : tintColor}]}/>),
                 }}/>
                 <Tab.Screen name="商城" component={Store} options={{
                     tabBarIcon: ({ focused, tintColor }) => (
                                 <Image
                                 source={require('../asset/tab/store.png')}
-                                style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
+                                style={[styles.icon, {tintColor: focused ? Theme['icon-color-theme'] : tintColor}]}/>),
                 }}/>
                 <Tab.Screen name="我的" component={Mine} options={{
                     tabBarIcon: ({ focused, tintColor }) => (<Image
                         source={require('../asset/tab/mine.png')}
-                        style={[styles.icon, {tintColor: focused ? Theme['icon-color-basic'] : tintColor}]}/>),
+                        style={[styles.icon, {tintColor: focused ? Theme['icon-color-theme'] : tintColor}]}/>),
                 }}/>
             </Tab.Navigator>
         )
@@ -60,7 +62,10 @@ export default class Main extends Component {
         return (
             <Provider>
                 <NavigationContainer>
-                        <TabNavigator/>
+                    <Stack.Navigator>
+                        <Stack.Screen name='/main' options={{title: null, headerStyle: {height: 0}}} component={TabNavigator}/>
+                        <Stack.Screen name='/mine/myStore' options={{title: null, headerStyle:{height: 0}}} component={MyStore}/>
+                    </Stack.Navigator>
                 </NavigationContainer>
             </Provider>
         )

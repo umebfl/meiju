@@ -8,12 +8,13 @@
                     title: '我的商城',
                     subtitel: '',
                     icon: 'mystore',
-                    push: '/mine/myStore',
+                    path: '/mine/myStore',
                 },
                 {
                     title: '家电定制',
                     subtitel: '',
                     icon: 'customization',
+                    path: '/mine/customization',
                 }
             ]
         },
@@ -25,15 +26,19 @@
                     title: '服务中心',
                     subtitel: '',
                     icon: 'servicecenter',
+                    path: '/mine/servicecenter',
                 },
                 {
                     title: '社区中心', subtitel: '',
                     icon: 'community',
+                    path: '/mine/community',
+
                 },
                 {
                     title: '帮助中心',
                     subtitel: '帮助中心',
                     icon: 'helpcenter',
+                    path: '/mine/helpcenter',
                 }
             ]
         },
@@ -45,11 +50,13 @@
                     title: '家庭安全防卫',
                     subtitel: '',
                     icon:'familySafety',
+                    path:'/mine/familySafety',
                 },
                 {
                     title: '去评分',
                     subtitel: '',
                     icon: 'grade',
+                    path:'/mine/grade',
                 }
             ]
          },
@@ -61,11 +68,13 @@
                     title: '第三方平台设备',
                     subtitel: '',
                     icon: 'otherdevice',
+                    path:'/mine/otherdevice',
                 },
                 {
                     title: '设置',
                     subtitel: '',
                     icon: 'setting',
+                    path:'/mine/setting',
                 }
             ]
         },

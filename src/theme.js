@@ -1,5 +1,7 @@
 
 export default {
-    'icon-color-basic' : '#262626',
-    'default-theme-color' : '#434343'
+    'icon-color-basic' : '#BFBFBF',
+    'icon-color-theme' : '#000001',
+
+    'text-subtitel': '#828388',
 }
