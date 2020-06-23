@@ -21,7 +21,7 @@ export default class Index extends Component {
     render() {
         return (
             <Tab.Navigator
-                initialRouteName='Mine'
+                initialRouteName='Discover'
                 tabBarOptions={{
                     activeTintColor: Theme['text-active'],
                 }}>
