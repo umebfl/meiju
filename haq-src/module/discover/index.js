@@ -29,7 +29,7 @@ export default class Module extends Component {
                 }}
                 tabBarOptions={{
                     style: {
-                        marginTop: -9,
+                        marginTop: 0,
                         // 阴影移除
                         elevation: 0,
                         marginLeft: '12%',
@@ -59,48 +59,3 @@ export default class Module extends Component {
         )
     }
 }
-
-
-
-
-
-
-
-// import React, { Component } from 'react'
-//
-// import {
-//     View,
-//     Text,
-// } from 'react-native'
-//
-//
-
-//
-// export default class Module extends Component {
-//     render() {
-//
-//         const {
-//             navigation,
-//         } = this.props
-//
-//         return (
-//             <View>
-//                 <ScrollableTabView
-//                     style={{
-//                         backgroundColor: 'white',
-//                     }}
-//                     scrollWithoutAnimation={true}
-//                     // renderTabBar={() => <Tab_header/>}
-//                     // ref={(tabView) => {this.tabView = tabView}}
-//                     tabBarBackgroundColor='white'>
-//
-//                     <Selected navigation={navigation}/>
-//                     <Scene navigation={navigation}/>
-//                     <Cookbook navigation={navigation}/>
-//                     <Service navigation={navigation}/>
-//
-//                 </ScrollableTabView>
-//             </View>
-//         )
-//     }
-// }
