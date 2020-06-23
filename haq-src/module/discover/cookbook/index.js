@@ -321,7 +321,9 @@ export default class Module extends Component {
                 flex: 1,
                 backgroundColor: Theme['base-color'],
             }}>
-                <ScrollView>
+                <ScrollView
+                    showsVerticalScrollIndicator={ false }
+                >
                     <Search/>
                     <Menu/>
                     <Recommend/>
