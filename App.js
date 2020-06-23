@@ -5,7 +5,7 @@ import Index from './haq-src/index.js'
 
 const App: () => React$Node = () => {
     return (
-        <Main/>
+        <Index/>
     )
 }
 

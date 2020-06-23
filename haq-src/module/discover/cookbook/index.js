@@ -45,8 +45,8 @@ const Advertisement_21 = require('../../../../asset/img/21.jpg')
 
 const style = {
     title_container: {
-        marginTop: 32,
-        marginBottom: 14,
+        marginTop: 36,
+        marginBottom: 16,
     },
     title: {
         fontSize: 18,
@@ -169,8 +169,8 @@ const Recommend = class Index extends Component {
                 <View style={[style.title_container, {flexDirection: 'row', justifyContent: 'space-between'}]}>
                     <Text style={style.title}>今日推荐</Text>
 
-                    <Text style={{fontSize: 12, color: Theme['text-unactive']}}>
-                        <Text style={{fontSize: 16, color: Theme['text-active']}}>{this.state.index + 1}</Text>/3
+                    <Text style={{fontSize: 14, color: Theme['text-unactive']}}>
+                        <Text style={{fontSize: 18, color: Theme['text-active']}}>{this.state.index + 1}</Text>/3
                     </Text>
                 </View>
                 <Carousel
@@ -210,7 +210,7 @@ const Cuisine = payload => (
             {
                 R.addIndex(R.map)(
                     (v, k) => (
-                        <ImageBackground key={k} source={Advertisement_10} style={{
+                        <ImageBackground key={k} source={v.source} style={{
                             flex: 1,
                             marginHorizontal: 4,
                             borderRadius: 10,
@@ -219,8 +219,8 @@ const Cuisine = payload => (
                             <View style={{
                                 width: '100%',
                                 height: '100%',
-                                backgroundColor: 'rgba(0,0,0, 0.34)',
-                                paddingHorizontal: 24,
+                                backgroundColor: 'rgba(0,0,0, 0.20)',
+                                // paddingHorizontal: 20,
                                 paddingVertical: 8,
                                 borderRadius: 10,
                                 justifyContent: 'center',
@@ -228,14 +228,14 @@ const Cuisine = payload => (
                             }}>
                                 <Text style={{
                                     color: 'white',
-                                    fontSize: 16,
-                                    marginBottom: 2,
+                                    fontSize: 18,
+                                    marginBottom: 6,
                                 }}>
                                     {v.title}
                                 </Text>
                                 <Text style={{
                                     color: 'white',
-                                    fontSize: 12,
+                                    fontSize: 14,
                                 }}>
                                     {v.desc}
                                 </Text>
@@ -246,10 +246,12 @@ const Cuisine = payload => (
                     {
                         title: '轻松一餐',
                         desc: 'Easy Delicious Recipes',
+                        source: Advertisement_10,
                     },
                     {
                         title: '网红菜',
                         desc: 'Star\'s Recipes',
+                        source: Advertisement_11,
                     },
                 ])
             }
@@ -290,20 +292,22 @@ const Diet = payload => (
                     }}>
                         吃得更健康
                     </Text>
-
-                    <Text style={{
-                        color: Theme['tex-active'],
-                        fontSize: 18,
+                    <View style={{
+                        width: 114,
                         borderRadius: 20,
-                        width: 124,
-                        paddingHorizontal: 24,
-                        paddingVertical: 6,
-                        marginTop: 106,
                         borderWidth: Theme['border-width'],
                         borderColor: Theme['text-active'],
+                        paddingVertical: 10,
+                        marginTop: 120,
+                        alignItems: 'center',
                     }}>
-                        开始设置
-                    </Text>
+                        <Text style={{
+                            color: Theme['tex-active'],
+                            fontSize: 18,
+                        }}>
+                            开始设置
+                        </Text>
+                    </View>
                 </WingBlank>
             </ImageBackground>
         </View>
