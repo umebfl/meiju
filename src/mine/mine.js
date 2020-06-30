@@ -24,6 +24,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Icon from 'react-native-vector-icons/AntDesign'
 import Icon_material from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import DefItem from '#/src/component/defItem'
+
 import ConstantData from './list.json'
 import Icon_list from '#/asset/icon'
 
@@ -116,53 +118,6 @@ const AdvertisementbarView = playload => {
     )
 }
 
-// 列表Item
-class SectionItem extends React.Component {
-
-    handlePress() {
-        const data = this.props.data
-        const onPress = this.props.onPress
-        const navigation = this.props.navigation
-
-        if (onPress) {
-            onPress()
-        } else {
-            // alert(data.title)
-            navigation.navigate(data.path)
-        }
-    }
-
-    render() {
-
-        const data = this.props.data
-        const onPress = this.props.onPress
-
-        return (
-            <TouchableOpacity style={styles.item} onPress={() => this.handlePress()}>
-                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems:'center'}}>
-                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
-                        <View style={{flexDirection: 'row', alignItems:'center'}}>
-                            <Image
-                               style={{width:20,height:20, marginLeft: 12}}
-                               source={Icon_list[data.icon]}
-                            />
-                            <Text style={{fontSize: 15,marginLeft:5}}>
-                               {data.title}
-                            </Text>
-                        </View>
-                        <Text style={{fontSize: 12,marginLeft:5, marginLeft: 'auto', color: THEME['text-subtitel']}}>
-                           {data.subtitel}
-                        </Text>
-                    </View>
-                    <WingBlank>
-                        <Icon name='right' color={THEME['icon-color-basic']} size={15}/>
-                    </WingBlank>
-                </View>
-            </TouchableOpacity>
-        )
-    }
-}
-
 export default class Connect extends React.Component {
 
     render() {
@@ -173,7 +128,17 @@ export default class Connect extends React.Component {
         return (
             <SafeAreaView style={styles.container}>
                 <SectionList
-                    renderItem={({ item, index, section }) => <SectionItem data={item} navigation={navigation}/>}
+                    renderItem={({ item, index, section }) =>
+                        <DefItem
+                            data={item}
+                            icon={
+                                <Image
+                                    style={{width:20,height:20, marginLeft: 12}}
+                                    source={Icon_list[item.icon]}/>
+                            }
+                            onPress={() => (navigation.navigate(item.path))}
+                        />
+                    }
                     ListHeaderComponent={() => (
                         <View>
                             <MessageView/>

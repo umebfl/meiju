@@ -12,6 +12,7 @@ import Store from './store/store'
 import Mine from './mine/mine'
 
 import MyStore from '#/src/mine/myStore'
+import Setting from '#/src/mine/setting'
 
 import Theme from './theme'
 
@@ -65,6 +66,7 @@ export default class Main extends Component {
                     <Stack.Navigator>
                         <Stack.Screen name='/main' options={{title: null, headerStyle: {height: 0}}} component={TabNavigator}/>
                         <Stack.Screen name='/mine/myStore' options={{title: null, headerStyle:{height: 0}}} component={MyStore}/>
+                        <Stack.Screen name='/mine/setting' options={{title: null, headerStyle:{height: 0}}} component={Setting}/>
                     </Stack.Navigator>
                 </NavigationContainer>
             </Provider>

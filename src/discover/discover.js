@@ -5,12 +5,13 @@ import {
     StyleSheet
 } from 'react-native'
 
+import Choiceness from '#/src/discover/choiceness'
 
 export default class Connect extends React.Component {
     render() {
         return (
             <View style={styles.view}>
-
+                <Choiceness/>
             </View>
         )
     }
