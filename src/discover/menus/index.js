@@ -11,7 +11,7 @@ export default class Connect extends React.Component {
     render() {
         return (
             <View style={styles.view}>
-                <Text> home </Text>
+                <Text> menus </Text>
             </View>
         )
     }
