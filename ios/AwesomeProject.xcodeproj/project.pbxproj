@@ -18,8 +18,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* AwesomeProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AwesomeProjectTests.m */; };
 		321EC4CB24923C1500E4C126 /* libCocoaAsyncSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 321EC4CA24923C1500E4C126 /* libCocoaAsyncSocket.a */; };
-		32E8129B24A1E7EA00EB2161 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32E8129924A1E7EA00EB2161 /* antoutline.ttf */; };
-		32E8129C24A1E7EA00EB2161 /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32E8129A24A1E7EA00EB2161 /* antfill.ttf */; };
+		32A208B224B2C704000941D2 /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A208B024B2C704000941D2 /* antfill.ttf */; };
+		32A208B324B2C704000941D2 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32A208B124B2C704000941D2 /* antoutline.ttf */; };
 		4FD7E0B38A3DB811EF374B50 /* libPods-AwesomeProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE7B45BD8024841865E81B8 /* libPods-AwesomeProject.a */; };
 		D3A4F8E4EE10D84FF8576BC2 /* libPods-AwesomeProject-AwesomeProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 417142EBEB16AE796192DCC0 /* libPods-AwesomeProject-AwesomeProjectTests.a */; };
 		E50E53E55F0C06418C63AE51 /* libPods-AwesomeProject-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D1531F66943CF6F33839FA /* libPods-AwesomeProject-tvOS.a */; };
@@ -81,13 +81,13 @@
 		329C898924923B75006218C9 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		329C898A24923B75006218C9 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		329C898B24923B75006218C9 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		32A208B024B2C704000941D2 /* antfill.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = antfill.ttf; path = "../../@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; };
+		32A208B124B2C704000941D2 /* antoutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = antoutline.ttf; path = "../../@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; };
 		32BEB01824921CA000C4D38A /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BEB01A24921CA900C4D38A /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BEB01C24921CDF00C4D38A /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BEB01E2492297700C4D38A /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BEB020249229B900C4D38A /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		32E8129924A1E7EA00EB2161 /* antoutline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = antoutline.ttf; sourceTree = "<group>"; };
-		32E8129A24A1E7EA00EB2161 /* antfill.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = antfill.ttf; sourceTree = "<group>"; };
 		35C310C250FF49F6884BF704 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		4053192660DED098BD2C77A6 /* Pods-AwesomeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		417142EBEB16AE796192DCC0 /* libPods-AwesomeProject-AwesomeProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeProject-AwesomeProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,8 +229,8 @@
 		329C897B24923B75006218C9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				32E8129A24A1E7EA00EB2161 /* antfill.ttf */,
-				32E8129924A1E7EA00EB2161 /* antoutline.ttf */,
+				32A208B024B2C704000941D2 /* antfill.ttf */,
+				32A208B124B2C704000941D2 /* antoutline.ttf */,
 				329C897C24923B75006218C9 /* Fontisto.ttf */,
 				329C897D24923B75006218C9 /* Octicons.ttf */,
 				329C897E24923B75006218C9 /* Feather.ttf */,
@@ -446,9 +446,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				32E8129C24A1E7EA00EB2161 /* antfill.ttf in Resources */,
-				32E8129B24A1E7EA00EB2161 /* antoutline.ttf in Resources */,
+				32A208B324B2C704000941D2 /* antoutline.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				32A208B224B2C704000941D2 /* antfill.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
