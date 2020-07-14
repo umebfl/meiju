@@ -17,6 +17,9 @@ import {
     WingBlank,
 } from '@ant-design/react-native'
 
+import Video from 'react-native-video'
+
+
 import Theme from '#/src/theme'
 
 import Waterfall from 'react-native-waterfall'
@@ -28,17 +31,57 @@ const Device_Height = Dimensions.get('window').height
 
 const DefaultsImg = require('../../../asset/defaultImage.jpg')
 
+class VideoPlayer extends React.Component {
+
+    state = {
+        isPaused: true,  //是否暂停
+    }
+
+    changePaused() {
+        this.setState ({
+            isPaused: this.state.isPaused ? false : true
+        })
+    }
+
+    render() {
+        return (
+            <TouchableOpacity onPress={() => this.changePaused()}>
+                <Video
+                    source={require('../../../asset/demo.mp4')}
+                    ref={(ref) => {
+                        this.player = ref
+                    }}
+                    style={{width: '100%', height: 120,borderRadius: 5}}
+                    allowsExternalPlayback={false} // 不允许导出 或 其他播放器播放
+                    paused = {this.state.isPaused} // 控制视频是否暂停
+                    resizeMode='cover' // 视频拉伸,平台:Android ExoPlayer, Android MediaPlayer, iOS, Windows UWP
+                    posterResizeMode='contain' // 拉伸 平台: 全平台
+                    volume={0} // 音量
+                    repeat={true} // 循环
+                />
+            </TouchableOpacity>
+
+        )
+    }
+}
+
 const WaterfallItem = payload => {
     height = payload.data.height * payload.itemWidth / payload.data.width
     return (
         <View>
-
-            <Image
-                style={{width: '100%', height:  height > 180 ? 180 : height, borderRadius: 5}}
-                source={{uri: payload.data.imageURL}}
-                defaultSource={DefaultsImg}
-                resizeMode={'cover'}
-            />
+            {
+                payload.data.VideoURL ?
+                    <View>
+                        <VideoPlayer/>
+                    </View>
+                    :
+                    <Image
+                        style={{width: '100%', height:  height > 180 ? 180 : height, borderRadius: 5}}
+                        source={{uri: payload.data.imageURL}}
+                        defaultSource={DefaultsImg}
+                        resizeMode={'cover'}
+                    />
+            }
             <WhiteSpace/>
             <Text numberOfLines={2} style={{fontSize: 13}}>{payload.data.userContent}</Text>
             <WhiteSpace/>
@@ -57,129 +100,65 @@ const WaterfallItem = payload => {
 
 class WaterfallView extends React.Component {
 
-    constructor(props) {
-        super(props)
-
-    }
-
     state = {
-        dataSource: [],
         isRefreshing: false,
         isLoadingMore: false,
     }
 
-    componentDidMount(){
+    componentDidMount() {
        this.data = []
        this.loadMore()
      }
 
-
-    // getData() {
-    //     fetch(GetURL)
-    //         .then((res) => res.json())
-    //         .then(data => {
-    //             // console.log('---> data: ', data);
-    //             console.log('-----> 原数据长度: ', this.state.dataSource.length)
-    //             this.setState({
-    //                 dataSource: [...this.state.dataSource, ...data.discover]
-    //             })
-    //             console.log('-----> 拼接数据长度: ', this.state.dataSource.length)
-    //             // console.log('---> now data: ', this.state.dataSource);
-    //         }
-    //     )
-    // }
-    //
-    // renderItem(itemData, itemIdx, itemContainer) {
-    //     return (
-    //         <WaterfallItem data={itemData} itemWidth={itemContainer.width}/>
-    //     )
-    // }
-
-    // refresh() {
-    //     if(this.state.isRefreshing || this.state.isLoadingMore) {
-    //         return
-    //     }
-    //     this.setState({isRefreshing: true})
-    //     setTimeout(() => {
-    //         console.log('--> refreshing')
-    //         this.setState({
-    //             dataSource: []
-    //         })
-    //         this.getData()
-    //         this.setState({isRefreshing: false})
-    //     },500)
-    // }
-
-    addMoreDatas(){
-        // for(var i=0;i<5;++i){
-        //     this.data.push({
-        //            "userName": "A10",
-        //            "userIconUrl": null,
-        //            "userContent": "'A1:iqijdojqwodjqowjdojqw'",
-        //            "discover": "discover11aaasdas",
-        //            "imageURL": "http://img02.tooopen.com/images/20160604/tooopen_sy_164226033798.jpg",
-        //            "width": 1080,
-        //            "height": 1660
-        //     })
-        // }
+    getDatas() {
+        // 需要逐个push，否则会出现延迟渲染问题, 加载更多时this.data的引用不能改变
         fetch(GetURL)
             .then((res) => res.json())
             .then(data => {
-                for(var i=0;i < data.discover.length - 1; ++i){
+                for(var i=0; i < data.discover.length - 1; ++i) {
                     this.data.push(
                         data.discover[i]
                     )
                 }
                 // this.data = [...this.data, ...data.discover]
-                // this.data = this.data.concat(data.discover)
+                // this.data = this.data.push(...data.discover)
                 this.setState({isLoadingMore: false})
-            }
-        )
-        console.log(this.data);
+                console.log('----> datas: ', this.data);
+            })
+            .catch(error => {
+                alert('数据请求失败: ' + error.message)
+                this.setState({isLoadingMore: false})
+            })
     }
 
     loadMore = () => {
         // debugger
-        if(this.state.isRefreshing || this.state.isLoadingMore){
+        if(this.state.isRefreshing || this.state.isLoadingMore) {
             return;
         }
+
         this.setState({isLoadingMore: true})
-        this.addMoreDatas();
+        this.getDatas();
     }
 
-
-    refresh = ()=>{
-        if(this.state.isRefreshing || this.state.isLoadingMore){
+    // 刷新时改变props.data的引用
+    refresh = () => {
+        if(this.state.isRefreshing || this.state.isLoadingMore) {
             return;
         }
+
         this.setState({isRefreshing: true})
         setTimeout(()=>{
             this.data = [];
-            this.addMoreDatas();
-            this.setState({isRefreshing: false})
+            this.getDatas();
         },500)
     }
-    renderItem = (itemData,itemIdx,itemContainer)=>{
-        return (
-          <WaterfallItem data={itemData} itemWidth={itemContainer.width}/>
-        )
-      }
 
-    // loadMore() {
-    //     if(this.state.isRefreshing || this.state.isLoadingMore) {
-    //         return
-    //     }
-    //     this.setState({isLoadingMore: true})
-    //     // setTimeout(() => {
-    //     //     console.log('--> loadMore')
-    //     //     this.getData()
-    //     //     this.setState({isLoadingMore: false})
-    //     // },500)
-    //     this.setState({
-    //         dataSource: [...this.state.dataSource, ...this.state.dataSource],
-    //         isLoadingMore: false
-    //     })
-    // }
+    renderItem = (itemData, itemIdx, itemContainer) => {
+        return (
+            <WaterfallItem data={itemData} itemWidth={itemContainer.width}/>
+        )
+    }
 
     render() {
         const {
@@ -210,27 +189,6 @@ class WaterfallView extends React.Component {
 }
 
 export default class Connect extends React.Component {
-
-    // constructor(props) {
-    //     super(props)
-    //     this.getData()
-    // }
-    //
-    // state = {
-    //     dataSource: []
-    // }
-    //
-    // getData() {
-    //     fetch(GetURL)
-    //         .then((res) => res.json())
-    //         .then(data => {
-    //             console.log(data.discover)
-    //             this.setState({
-    //                 dataSource: data.discover
-    //             })
-    //         }
-    //     )
-    // }
 
     render() {
         return (
