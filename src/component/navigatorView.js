@@ -45,7 +45,6 @@ const NavigatorView = payload => (
 
 const styles = StyleSheet.create({
     navigationBar: {
-        flex: 1,
         height: 50,
         justifyContent: 'space-between',
         flexDirection: 'row',

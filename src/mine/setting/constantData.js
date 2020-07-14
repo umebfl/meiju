@@ -1,4 +1,4 @@
-const ConstantData = [
+constantData = [
         {
             title: "账号",
             data:
@@ -108,4 +108,5 @@ const ConstantData = [
             ]
         },
 ]
-export default ConstantData
+
+exports.data = constantData
