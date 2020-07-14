@@ -8,11 +8,14 @@ import { NavigationContainer } from '@react-navigation/native'
 
 import Discover from './discover/discover.js'
 import Home from './home/home'
-import Store from './store/store'
+import Store from './store'
 import Mine from './mine/mine'
 
 import MyStore from '#/src/mine/myStore'
 import Setting from '#/src/mine/setting'
+
+import LoadData from '#/src/store/loadData'
+import SaveData from '#/src/store/saveData'
 
 import Theme from './theme'
 
@@ -67,6 +70,8 @@ export default class Main extends Component {
                         <Stack.Screen name='/main' options={{title: null, headerStyle: {height: 0}}} component={TabNavigator}/>
                         <Stack.Screen name='/mine/myStore' options={{title: null, headerStyle:{height: 0}}} component={MyStore}/>
                         <Stack.Screen name='/mine/setting' options={{title: null, headerStyle:{height: 0}}} component={Setting}/>
+                        <Stack.Screen name='/store/loadData' options={{title: null, headerStyle:{height: 0}}} component={LoadData}/>
+                        <Stack.Screen name='/store/saveData' options={{title: null, headerStyle:{height: 0}}} component={SaveData}/>
                     </Stack.Navigator>
                 </NavigationContainer>
             </Provider>
