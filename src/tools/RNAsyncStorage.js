@@ -23,7 +23,7 @@ const storage = new Storage({
   sync : require('./RNAsyncStorage_asyn').async
 })
 
-//导出`storage`
+// 导出`storage`
 exports.storage = storage
-//在这里设置`storage.sync`
-// storage.sync = require('./RNAsyncStorage_asyn').async
+// 设置`storage.sync`, 当没有找到数据时的处理
+storage.sync = require('./RNAsyncStorage_asyn').async

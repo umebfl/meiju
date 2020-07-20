@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
 } from 'react-native'
 
-import AsyncStorage from '#/RNAsyncStorage'
+import AsyncStorage from '#/src/tools/RNAsyncStorage'
 
 let storage = AsyncStorage.storage
 
