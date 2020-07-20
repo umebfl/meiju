@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import { StyleSheet, Image } from 'react-native'
-import { Provider } from '@ant-design/react-native'
+// import { Provider } from '@ant-design/react-native'
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import store from '#/store' // 注意store路径
+
 import Discover from './discover/discover.js'
 import Home from './home/home'
 import Store from './store'
-import Mine from './mine/mine'
+import Mine from './mine'
 
 import MyStore from '#/src/mine/myStore'
 import Setting from '#/src/mine/setting'
@@ -64,7 +68,7 @@ export default class Main extends Component {
     render() {
         const Stack = createStackNavigator()
         return (
-            <Provider>
+            <Provider store={store()}>
                 <NavigationContainer>
                     <Stack.Navigator>
                         <Stack.Screen name='/main' options={{title: null, headerStyle: {height: 0}}} component={TabNavigator}/>
