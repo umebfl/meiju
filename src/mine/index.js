@@ -31,6 +31,18 @@ import Icon_list from '#/asset/icon'
 
 import THEME from '#/src/theme'
 
+import {
+    bindActionCreators,
+} from 'redux'
+
+import {
+    connect,
+} from 'react-redux'
+
+import {
+    action,
+} from './reducer'
+
 const Stack = createStackNavigator()
 
 const AdvImageArray = [
@@ -118,13 +130,14 @@ const AdvertisementbarView = playload => {
     )
 }
 
-export default class Connect extends React.Component {
+class Connect extends React.Component {
 
     render() {
         const {
             navigation,
+            mine,
         } = this.props
-
+        console.log('===> ',mine.isLogin)
         return (
             <SafeAreaView style={styles.container}>
                 <SectionList
@@ -159,6 +172,17 @@ export default class Connect extends React.Component {
         )
     }
 }
+
+export default connect(
+    state => ({
+        mine: state.mine
+    }),
+    dispatch => ({
+        action: bindActionCreators({
+            ...action,
+        }, dispatch),
+    }),
+)(Connect)
 
 
 const styles = StyleSheet.create({
